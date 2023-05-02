@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 import BlogPreview from "../components/BlogPreview.astro";
@@ -15,7 +14,7 @@ const projects = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout
-  title="My Work | Wojciech Warwas"
+  title="My Blog | Wojciech Warwas"
   description="Learn about Wojciech Warwas's most recent projects"
 >
   <div class="stack gap-20">
@@ -25,6 +24,8 @@ const projects = (await getCollection("blog")).sort(
         tagline="Read about my experiences with different technologies."
         align="start"
       />
+      <p>Under construction, many cool things to come...</p>
+      <!--
       <Grid variant="offset">
         {
           projects.map((project) => (
@@ -34,6 +35,7 @@ const projects = (await getCollection("blog")).sort(
           ))
         }
       </Grid>
+       -->
     </main>
     <ContactCTA />
   </div>

@@ -31,12 +31,13 @@ const projects = (await getCollection("work"))
       <header class="hero">
         <Hero
           title="Hello, my name is Wojciech Warwas"
-          tagline="I am a Full-Stack Developer who is currently based in Wrocław, Poland."
+          tagline="I am a professional full stack developer based in Wrocław, Poland."
           align="start"
         >
           <div class="roles">
             <Pill><Icon icon="code" size="1.33em" />Developer</Pill>
             <Pill><Icon icon="circuit" size="1.33em" />Engineer</Pill>
+            <Pill><Icon icon="pen" size="1.33em" />Blogger</Pill>
           </div>
         </Hero>
 
@@ -56,11 +57,12 @@ const projects = (await getCollection("work"))
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Selected Work</h3>
           <p>
-            Take a look below at some of my featured work for clients from the
-            past few years.
+            Please take a look at some of my featured past work displayed below.
           </p>
         </header>
+        <p>Under construction, many cool things to come...</p>
 
+        <!--
         <div class="gallery">
           <Grid variant="offset">
             {
@@ -72,6 +74,7 @@ const projects = (await getCollection("work"))
             }
           </Grid>
         </div>
+        -->
 
         <div class="cta">
           <CallToAction href="/work/">
@@ -80,36 +83,6 @@ const projects = (await getCollection("work"))
           </CallToAction>
         </div>
       </section>
-
-      <!--
-      <section class="section with-background bg-variant">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
-          <p>
-            I have been fortunate enough to recieve praise for my work in
-            several publications. Take a look below to learn more.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="small">
-            {
-              [
-                "Medium",
-                "BuzzFeed",
-                "The Next Web",
-                "awwwards.",
-                "TechCrunch",
-              ].map((brand) => (
-                <li class="mention-card">
-                  <p>{brand}</p>
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
-      </section>
-       -->
     </main>
 
     <ContactCTA />
@@ -133,7 +106,6 @@ const projects = (await getCollection("work"))
     object-fit: cover;
     object-position: top;
     border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
   }
 
   @media (min-width: 50em) {
@@ -243,7 +215,6 @@ const projects = (await getCollection("work"))
     border-radius: 1.5rem;
     color: var(--gray-300);
     background: var(--gradient-subtle);
-    box-shadow: var(--shadow-sm);
   }
 
   @media (min-width: 50em) {
