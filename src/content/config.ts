@@ -21,4 +21,9 @@ export const collections = {
       img_alt: z.string().optional(),
     }),
   }),
+  tags: defineCollection({
+    schema: z.object({
+      tags: z.array(z.string()),
+    }),
+  }),
 };

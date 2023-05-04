@@ -6,11 +6,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
 import CallToAction from "../components/CallToAction.astro";
-import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
@@ -25,7 +23,10 @@ const projects = (await getCollection("work"))
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Home | Wojciech Warwas"
+  description="Home Wojciech Warwas Lorem Ipsum"
+>
   <div class="stack gap-20 lg:gap-48">
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">

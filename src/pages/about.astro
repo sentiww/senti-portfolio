@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 ---
@@ -47,38 +46,153 @@ import Hero from "../components/Hero.astro";
         </div>
       </section>
       <section>
-        <h2 class="section-title">Tech skills</h2>
+        <h2 class="section-title">Frontend skills</h2>
         <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed.
-          </p>
+          <ul class="list">
+            <li class="list-item">Proficiency in HTML, CSS, and JavaScript</li>
+            <li class="list-item">
+              Experience with modern JavaScript frameworks such as React or
+              Next.js
+            </li>
+            <li class="list-item">
+              Knowledge of responsive web design and mobile-first design
+              principles
+            </li>
+            <li class="list-item">
+              Ability to optimize website performance through techniques like
+              minification or lazy loading
+            </li>
+            <li class="list-item">
+              Familiarity with server-side rendering and client-side rendering
+            </li>
+            <li class="list-item">
+              Knowledge of web accessibility standards and how to make websites
+              accessible to users with disabilities
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Backend skills</h2>
+        <div class="content">
+          <ul class="list">
+            <li class="list-item">
+              Proficiency in the C# programming language
+            </li>
+            <li class="list-item">
+              Knowledge of .NET Core framework and its associated technologies
+              such as ASP.NET Core, Entity Framework Core, and LINQ
+            </li>
+            <li class="list-item">
+              Familiarity with SQL databases like PostgreSQL or Microsoft SQL
+              Server
+            </li>
+            <li class="list-item">
+              Knowledge of web APIs and RESTful web services
+            </li>
+            <li class="list-item">
+              Ability to optimize database performance through techniques like
+              indexing and caching
+            </li>
+            <li class="list-item">
+              Familiarity with cloud platforms like Microsoft Azure or AWS
+            </li>
+            <li class="list-item">
+              Understanding of security best practices such as encryption,
+              authorization, and authentication
+            </li>
+            <li class="list-item">
+              Experience with Docker and containerization
+            </li>
+            <li class="list-item">
+              Knowledge of automated testing frameworks such as NUnit or xUnit
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">DevOps skills</h2>
+        <div class="content">
+          <ul class="list">
+            <li class="list-item">
+              Experience with infrastructure automation tools such as Terraform
+              or ARM
+            </li>
+            <li class="list-item">
+              Knowledge of cloud computing platforms like Microsoft Azure or AWS
+            </li>
+            <li class="list-item">
+              Proficiency in scripting languages like Python or Bash
+            </li>
+            <li class="list-item">
+              Understanding of containerization technologies like Docker
+            </li>
+            <li class="list-item">
+              Familiarity with version control systems like Git
+            </li>
+            <li class="list-item">
+              Ability to build, maintain, and scale continuous integration and
+              delivery (CI/CD) pipelines
+            </li>
+            <li class="list-item">
+              Strong problem-solving skills and ability to troubleshoot complex
+              issues in production environments
+            </li>
+          </ul>
         </div>
       </section>
       <section>
         <h2 class="section-title">Soft skills</h2>
         <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            maximus.
-          </p>
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Certifications</h2>
-        <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            ultrices.
-          </p>
-        </div>
-      </section>
-      <section>
-        <h2 class="section-title">Events</h2>
-        <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            efficitur.
-          </p>
+          <ul class="list">
+            <li class="list-item">
+              Effective communication with other members of the development team
+              and end-users. This includes active listening, clear articulation
+              of ideas, and effective collaboration with others.
+            </li>
+            <li class="list-item">
+              Adaptation to changing requirements, technologies, and project
+              timelines. Ability to quickly pivot and learn new skills as
+              needed.
+            </li>
+            <li class="list-item">
+              Identify and solve complex problems logically and efficiently.
+              This includes troubleshooting issues and finding creative
+              solutions to technical challenges.
+            </li>
+            <li class="list-item">
+              Manageing time effectively and prioritize tasks based on
+              importance and urgency. Balance multiple tasks and deadlines
+              without sacrificing quality or accuracy.
+            </li>
+            <li class="list-item">
+              Work collaboratively with other members of the development team.
+              Contribute to team projects, share knowledge, and provide
+              constructive feedback.
+            </li>
+            <li class="list-item">
+              Lead and mentor other members of the development team. Inspire and
+              motivate others, set goals, and provide guidance when needed.
+            </li>
+            <li class="list-item">
+              Pay close attention to detail and ensure that code is accurate,
+              well-organized, and properly documented. Write clean, readable
+              code that is easy to maintain.
+            </li>
+            <li class="list-item">
+              Provide excellent customer service to end-users. Listen to
+              customer feedback, respond to user inquiries, and provide timely
+              support.
+            </li>
+            <li class="list-item">
+              Continuously learn and stay up-to-date with the latest
+              technologies and best practices in full-stack engineering.
+            </li>
+            <li class="list-item">
+              Work with people from different cultures, respecting and
+              appreciating diversity.
+            </li>
+          </ul>
         </div>
       </section>
     </section>
@@ -125,6 +239,14 @@ import Hero from "../components/Hero.astro";
   .content :global(a:hover),
   .content :global(a:focus) {
     text-decoration-color: currentColor;
+  }
+
+  .list {
+  }
+
+  .list-item {
+    margin-bottom: 1rem;
+    font-size: var(--text-base);
   }
 
   @media (min-width: 50em) {

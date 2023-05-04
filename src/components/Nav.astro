@@ -12,7 +12,7 @@ const textLinks: { label: string; href: string }[] = [
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
-  { label: "GitHub", href: "https://github.com/me", icon: "github-logo" },
+  { label: "GitHub", href: "https://github.com/SentiWW", icon: "github-logo" },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/sentiww/",
@@ -70,7 +70,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
           iconLinks.map(({ href, icon, label }) => (
             <a href={href} class="social">
               <span class="sr-only">{label}</span>
-              <Icon icon={icon} />
+              <Icon icon={icon} color="var(--accent-overlay)" />
             </a>
           ))
         }
@@ -156,8 +156,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
 
   .menu-button[aria-expanded="true"] {
     color: var(--gray-0);
-    background: linear-gradient(180deg, var(--gray-600), transparent),
-      radial-gradient(var(--gray-900), var(--gray-800) 150%);
+    background: var(--gray-700);
   }
 
   .menu-button[hidden] {
