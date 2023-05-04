@@ -24,8 +24,13 @@ const projects = (await getCollection("blog")).sort(
         tagline="Read about my experiences with different technologies."
         align="start"
       />
-      <p>Under construction, many cool things to come...</p>
+      Under construction, many cool things to come...
       <!--
+        show_redirect
+        redirect_href="/tags/"
+        redirect_text="Explore Tags"
+      />
+      
       <Grid variant="offset">
         {
           projects.map((project) => (
@@ -35,7 +40,7 @@ const projects = (await getCollection("blog")).sort(
           ))
         }
       </Grid>
-       -->
+      -->
     </main>
     <ContactCTA />
   </div>

@@ -1,17 +1,40 @@
 ---
+import LinkPill from "./LinkPill.astro";
+import Icon from "./Icon.astro";
+
 interface Props {
   title: string;
   tagline?: string;
   align?: "start" | "center";
+  show_redirect?: boolean;
+  redirect_text?: string;
+  redirect_href?: string;
 }
 
-const { align = "center", tagline, title } = Astro.props;
+const {
+  align = "center",
+  tagline,
+  title,
+  show_redirect,
+  redirect_text,
+  redirect_href,
+} = Astro.props;
 ---
 
 <header class:list={["hero stack gap-4", align]}>
   <div class="stack gap-2">
     <h1 class="title">{title}</h1>
     {tagline && <p class="tagline">{tagline}</p>}
+    {
+      show_redirect && (
+        <div class="redirect-container">
+          <LinkPill href={redirect_href}>
+            <Icon icon="tag" size="1.33em" />
+            {redirect_text}
+          </LinkPill>
+        </div>
+      )
+    }
   </div>
   <slot />
 </header>
@@ -31,6 +54,12 @@ const { align = "center", tagline, title } = Astro.props;
   .title {
     font-size: var(--text-3xl);
     color: var(--gray-0);
+  }
+
+  .redirect-container {
+    position: relative;
+    width: fit-content;
+    margin: 1.75rem auto 1rem auto;
   }
 
   @media (min-width: 50em) {

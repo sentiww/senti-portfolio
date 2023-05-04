@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import LinkPill from "../components/LinkPill.astro";
+import sanitize from "../helpers/uriSanitizer";
+
+interface Tag {
+  title: string;
+  slug: string;
+  count: number;
+}
+
+const blog = await getCollection("blog");
+const uniqueTags: Tag[] = [];
+
+blog.forEach((post) => {
+  post.data.tags.forEach((tag) => {
+    const current = sanitize(tag);
+    console.log(tag, current);
+    if (!uniqueTags.map((tag) => tag.slug).includes(current)) {
+      uniqueTags.push({ title: tag, slug: current, count: 1 });
+    } else {
+      const index = uniqueTags.map((tag) => tag.slug).indexOf(current);
+      uniqueTags[index].count++;
+    }
+  });
+});
+---
+
+<BaseLayout
+  title="Blog Tags | Wojciech Warwas"
+  description="Learn about Wojciech Warwas's most recent projects"
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      <a class="back-link" href="/blog/"><Icon icon="arrow-left" />Blog</a>
+      <Hero
+        title="Blog Tags"
+        tagline="All the tags used in my blog organized for easy searching."
+        align="start"
+      />
+      <div class="tags">
+        {
+          uniqueTags
+            .sort((a, b) => (a.count < b.count ? 1 : -1))
+            .map((tag) => (
+              <LinkPill href={`/tags/${tag.slug}`}>
+                {tag.title} ({tag.count})
+              </LinkPill>
+            ))
+        }
+      </div>
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+</style>
